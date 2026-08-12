@@ -67,7 +67,7 @@ title: ""
       <a href="{{ '/writeups/' | relative_url }}" class="section-link">all writeups &rarr;</a>
     </div>
     <div class="card-grid">
-      {% assign sorted_writeups = site.writeups | sort: "date" | reverse %}
+      {% assign sorted_writeups = site.writeups | where: "status", "complete" | sort: "date" | reverse %}
       {% for w in sorted_writeups limit: 3 %}
       {% assign d = w.difficulty | downcase %}
       <a class="card {% if d == 'easy' %}sev-easy{% elsif d == 'medium' %}sev-medium{% elsif d == 'hard' %}sev-hard{% endif %}"
