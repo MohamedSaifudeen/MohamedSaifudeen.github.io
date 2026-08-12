@@ -5,7 +5,7 @@ description: >-
   build, and ongoing work toward SOC analyst / blue team roles.
 
 # TODO: replace with your real GitHub Pages URL, e.g. https://yourusername.github.io
-url: "https://yourusername.github.io"
+url: "https://mohamedsaifudeen.github.io"
 baseurl: ""
 
 author:
@@ -14,7 +14,7 @@ author:
   # TODO: fill these in — leave "" for any you don't want to publish
   email: "mohamedsaifudeen32004@gmail.com"
   github: "https://github.com/MohamedSaifudeen"
-  medium: ""
+  medium: "https://medium.com/@mohamedsaifudeen32004"
   tryhackme: "https://tryhackme.com/p/RogueHawk"
   hackthebox: "https://ctf.hackthebox.com/user/profile/442352"
   linkedin: "https://linkedin.com/in/mohamedsaifudeen"

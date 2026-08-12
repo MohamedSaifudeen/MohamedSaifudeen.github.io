@@ -8,18 +8,24 @@ title: ""
     <h1>Mohamed Saifudeen</h1>
     <div class="role">SOC Analyst <span class="sep">·</span> Blue Team</div>
 
-    {% if site.author.linkedin != "" or site.author.github != "" or site.author.tryhackme != "" or site.author.hackthebox != "" or site.author.medium != "" %}
+    {% if site.author.linkedin != "" or site.author.github != "" or site.author.tryhackme != "" or
+    site.author.hackthebox != "" or site.author.medium != "" %}
     <div class="social-row">
-      {% if site.author.linkedin != "" %}<a href="{{ site.author.linkedin }}" class="social-badge" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>{% endif %}
-      {% if site.author.github != "" %}<a href="{{ site.author.github }}" class="social-badge" target="_blank" rel="noopener" aria-label="GitHub">GH</a>{% endif %}
-      {% if site.author.tryhackme != "" %}<a href="{{ site.author.tryhackme }}" class="social-badge" target="_blank" rel="noopener" aria-label="TryHackMe">THM</a>{% endif %}
-      {% if site.author.hackthebox != "" %}<a href="{{ site.author.hackthebox }}" class="social-badge" target="_blank" rel="noopener" aria-label="HackTheBox">HTB</a>{% endif %}
-      {% if site.author.medium != "" %}<a href="{{ site.author.medium }}" class="social-badge" target="_blank" rel="noopener" aria-label="Medium">Md</a>{% endif %}
+      {% if site.author.linkedin != "" %}<a href="{{ site.author.linkedin }}" class="social-badge" target="_blank"
+        rel="noopener" aria-label="LinkedIn">in</a>{% endif %}
+      {% if site.author.github != "" %}<a href="{{ site.author.github }}" class="social-badge" target="_blank"
+        rel="noopener" aria-label="GitHub">GH</a>{% endif %}
+      {% if site.author.tryhackme != "" %}<a href="{{ site.author.tryhackme }}" class="social-badge" target="_blank"
+        rel="noopener" aria-label="TryHackMe">THM</a>{% endif %}
+      {% if site.author.hackthebox != "" %}<a href="{{ site.author.hackthebox }}" class="social-badge" target="_blank"
+        rel="noopener" aria-label="HackTheBox">HTB</a>{% endif %}
+      {% if site.author.medium != "" %}<a href="{{ site.author.medium }}" class="social-badge" target="_blank"
+        rel="noopener" aria-label="Medium">Md</a>{% endif %}
     </div>
     {% endif %}
 
     <div style="margin-bottom:28px;">
-      <span class="eyebrow">about</span>
+      <span class="eyebrow">About</span>
       <p class="bio-summary">
         I'm a 2025 Computer Science Engineering graduate working toward SOC analyst and blue team
         roles. I hold the Google Cybersecurity Professional Certificate,
@@ -35,10 +41,13 @@ title: ""
         <span>session.log</span>
       </div>
       <div class="log-panel-body">
-        <div class="log-line">Google Cybersecurity Professional Certificate — <span class="status-ok">completed</span></div>
-        <div class="log-line">TryHackMe SOC Level 1 path — <span class="status-ok">completed</span>, top 1% globally (200+ rooms)</div>
+        <div class="log-line">Google Cybersecurity Professional Certificate — <span class="status-ok">completed</span>
+        </div>
+        <div class="log-line">TryHackMe SOC Level 1 path — <span class="status-ok">completed</span>, top 1% globally
+          (200+ rooms)</div>
         <div class="log-line">PortSwigger Web Security Academy — <span class="status-run">in progress</span></div>
-        <div class="log-line">Home lab "Enterprise 101" — <span class="status-run">active build</span> (7 VMs: AD, DNS, DHCP, SIEM)</div>
+        <div class="log-line">Home lab "Enterprise 101" — <span class="status-run">active build</span> (7 VMs: AD, DNS,
+          DHCP, SIEM)</div>
       </div>
     </div>
 
@@ -60,18 +69,19 @@ title: ""
     <div class="card-grid">
       {% assign sorted_writeups = site.writeups | sort: "date" | reverse %}
       {% for w in sorted_writeups limit: 3 %}
-        {% assign d = w.difficulty | downcase %}
-        <a class="card {% if d == 'easy' %}sev-easy{% elsif d == 'medium' %}sev-medium{% elsif d == 'hard' %}sev-hard{% endif %}" href="{{ w.url | relative_url }}">
-          <div class="card-meta">
-            {% if w.platform %}<span>{{ w.platform }}</span>{% endif %}
-            {% if w.difficulty %}<span>·</span><span>{{ w.difficulty }}</span>{% endif %}
-            {% if w.category %}<span>·</span><span>{{ w.category }}</span>{% endif %}
-          </div>
-          <h3>{{ w.title }}</h3>
-          <p>{{ w.summary }}</p>
-        </a>
+      {% assign d = w.difficulty | downcase %}
+      <a class="card {% if d == 'easy' %}sev-easy{% elsif d == 'medium' %}sev-medium{% elsif d == 'hard' %}sev-hard{% endif %}"
+        href="{{ w.url | relative_url }}">
+        <div class="card-meta">
+          {% if w.platform %}<span>{{ w.platform }}</span>{% endif %}
+          {% if w.difficulty %}<span>·</span><span>{{ w.difficulty }}</span>{% endif %}
+          {% if w.category %}<span>·</span><span>{{ w.category }}</span>{% endif %}
+        </div>
+        <h3>{{ w.title }}</h3>
+        <p>{{ w.summary }}</p>
+      </a>
       {% else %}
-        <p class="lede">No writeups published yet — check back soon.</p>
+      <p class="lede">No writeups published yet — check back soon.</p>
       {% endfor %}
     </div>
   </section>
@@ -84,13 +94,13 @@ title: ""
     <div class="card-grid">
       {% assign sorted_projects = site.projects | sort: "date" | reverse %}
       {% for p in sorted_projects limit: 2 %}
-        <a class="card" href="{{ p.url | relative_url }}">
-          <div class="card-meta">
-            {% if p.status %}<span>{{ p.status }}</span>{% endif %}
-          </div>
-          <h3>{{ p.title }}</h3>
-          <p>{{ p.summary }}</p>
-        </a>
+      <a class="card" href="{{ p.url | relative_url }}">
+        <div class="card-meta">
+          {% if p.status %}<span>{{ p.status }}</span>{% endif %}
+        </div>
+        <h3>{{ p.title }}</h3>
+        <p>{{ p.summary }}</p>
+      </a>
       {% endfor %}
     </div>
   </section>

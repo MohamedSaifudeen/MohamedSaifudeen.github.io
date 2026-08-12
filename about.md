@@ -6,7 +6,7 @@ permalink: /about/
 
 I'm a 2025 Computer Science Engineering graduate currently focused on breaking into SOC
 analyst and blue team roles — the detection, triage, and investigation side of
-security rather than the offensive side.
+security.
 
 ## Background
 
@@ -36,7 +36,7 @@ a project, a CTF, a person) — recruiters like a concrete origin story more tha
   globally** across **200+ rooms**, covering log analysis, SIEM fundamentals, phishing and
   malware triage, and incident response.
 - **PortSwigger Web Security Academy** — currently working through this as part of a path
-  toward an offensive-security internship opportunity. Understanding how attacks are built is
+  towards offensive-security. Understanding how attacks are built is
   part of how I want to get better at detecting them.
 
 ## Home lab
