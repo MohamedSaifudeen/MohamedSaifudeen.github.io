@@ -1,0 +1,35 @@
+---
+layout: default
+---
+<div class="wrap">
+  <a href="{{ '/projects/' | relative_url }}" class="back-link">&larr; all projects</a>
+
+  <article>
+    <div class="detail-header">
+      <span class="eyebrow">project</span>
+      <h1>{{ page.title }}</h1>
+    </div>
+
+    <div class="detail-meta">
+      {% if page.status %}
+        <span class="pill {% if page.status == 'Complete' %}pill-ok{% else %}pill-warn{% endif %}">{{ page.status }}</span>
+      {% endif %}
+      {% if page.date %}<span class="log-dim">{{ page.date | date: "%b %Y" }}</span>{% endif %}
+    </div>
+
+    {% if page.stack and page.stack != empty %}
+      <div class="tag-row">
+        {% for item in page.stack %}<span class="pill pill-info">{{ item }}</span>{% endfor %}
+      </div>
+    {% endif %}
+
+    <div class="detail-body">
+      {{ content }}
+    </div>
+
+    <div class="hero-actions" style="margin-top:28px;">
+      {% if page.github_url %}<a href="{{ page.github_url }}" class="btn" target="_blank" rel="noopener">Source on GitHub &rarr;</a>{% endif %}
+      {% if page.writeup_url %}<a href="{{ page.writeup_url }}" class="btn" target="_blank" rel="noopener">Related write-up &rarr;</a>{% endif %}
+    </div>
+  </article>
+</div>

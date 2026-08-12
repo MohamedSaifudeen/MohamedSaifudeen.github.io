@@ -1,0 +1,29 @@
+---
+layout: default
+title: Writeups
+permalink: /writeups/
+---
+<div class="wrap">
+  <span class="eyebrow">writeups</span>
+  <h1>Writeups</h1>
+  <p class="lede">TryHackMe rooms and other CTF/lab work, documented as I complete them.</p>
+
+  <div class="card-grid" style="margin-top:28px;">
+    {% assign sorted_writeups = site.writeups | sort: "date" | reverse %}
+    {% for w in sorted_writeups %}
+      {% assign d = w.difficulty | downcase %}
+      <a class="card {% if d == 'easy' %}sev-easy{% elsif d == 'medium' %}sev-medium{% elsif d == 'hard' %}sev-hard{% endif %}" href="{{ w.url | relative_url }}">
+        <div class="card-meta">
+          {% if w.platform %}<span>{{ w.platform }}</span>{% endif %}
+          {% if w.difficulty %}<span>·</span><span>{{ w.difficulty }}</span>{% endif %}
+          {% if w.category %}<span>·</span><span>{{ w.category }}</span>{% endif %}
+          {% if w.date %}<span>·</span><span>{{ w.date | date: "%b %-d, %Y" }}</span>{% endif %}
+        </div>
+        <h3>{{ w.title }}</h3>
+        <p>{{ w.summary }}</p>
+      </a>
+    {% else %}
+      <p>No writeups published yet — check back soon.</p>
+    {% endfor %}
+  </div>
+</div>

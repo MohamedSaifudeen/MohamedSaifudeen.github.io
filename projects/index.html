@@ -1,0 +1,31 @@
+---
+layout: default
+title: Projects
+permalink: /projects/
+---
+<div class="wrap">
+  <span class="eyebrow">projects</span>
+  <h1>Projects</h1>
+  <p class="lede">Hands-on builds — labs, tooling, and detection engineering work outside of guided rooms.</p>
+
+  <div class="card-grid" style="margin-top:28px;">
+    {% assign sorted_projects = site.projects | sort: "date" | reverse %}
+    {% for p in sorted_projects %}
+      <a class="card" href="{{ p.url | relative_url }}">
+        <div class="card-meta">
+          {% if p.status %}<span>{{ p.status }}</span>{% endif %}
+          {% if p.date %}<span>·</span><span>{{ p.date | date: "%b %Y" }}</span>{% endif %}
+        </div>
+        <h3>{{ p.title }}</h3>
+        <p>{{ p.summary }}</p>
+        {% if p.stack and p.stack != empty %}
+          <div class="tag-row">
+            {% for item in p.stack %}<span class="pill pill-info">{{ item }}</span>{% endfor %}
+          </div>
+        {% endif %}
+      </a>
+    {% else %}
+      <p>No projects published yet — check back soon.</p>
+    {% endfor %}
+  </div>
+</div>

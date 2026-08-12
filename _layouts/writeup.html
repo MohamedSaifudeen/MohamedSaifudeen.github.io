@@ -1,0 +1,44 @@
+---
+layout: default
+---
+<div class="wrap">
+  <a href="{{ '/writeups/' | relative_url }}" class="back-link">&larr; all writeups</a>
+
+  <article>
+    <div class="detail-header">
+      <span class="eyebrow">writeup</span>
+      <h1>{{ page.title }}</h1>
+    </div>
+
+    <div class="detail-meta">
+      {% if page.platform %}<span class="pill pill-info">{{ page.platform }}</span>{% endif %}
+      {% if page.difficulty %}
+        {% assign d = page.difficulty | downcase %}
+        <span class="pill
+          {% if d == 'easy' or d == 'low' %}pill-ok{% elsif d == 'medium' %}pill-warn{% elsif d == 'hard' or d == 'insane' or d == 'high' %}pill-critical{% endif %}">{{ page.difficulty }}</span>
+      {% endif %}
+      {% if page.category %}<span class="pill">{{ page.category }}</span>{% endif %}
+      {% if page.date %}<span class="log-dim">{{ page.date | date: "%b %-d, %Y" }}</span>{% endif %}
+    </div>
+
+    {% if page.tags and page.tags != empty %}
+      <div class="tag-row">
+        {% for tag in page.tags %}<span class="pill">#{{ tag }}</span>{% endfor %}
+      </div>
+    {% endif %}
+
+    {% if page.status == "draft" %}
+      <p class="todo-note"><strong>TODO —</strong> full write-up in progress. Structure and summary below are placeholders to replace with the real walkthrough.</p>
+    {% endif %}
+
+    <div class="detail-body">
+      {{ content }}
+    </div>
+
+    {% if page.external_url %}
+      <p style="margin-top:28px;">
+        <a href="{{ page.external_url }}" class="btn" target="_blank" rel="noopener">Full write-up &rarr;</a>
+      </p>
+    {% endif %}
+  </article>
+</div>

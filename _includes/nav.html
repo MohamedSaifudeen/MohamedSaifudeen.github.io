@@ -1,0 +1,14 @@
+<header class="site-header">
+  <div class="wrap">
+    <a href="{{ '/' | relative_url }}" class="brand">
+      <span class="prompt">&rsaquo;</span> {{ site.author.name }}
+    </a>
+    <nav class="site-nav">
+      <a href="{{ '/' | relative_url }}"{% if page.url == '/' %} class="active"{% endif %}>Home</a>
+      <a href="{{ '/writeups/' | relative_url }}"{% if page.url contains '/writeups' %} class="active"{% endif %}>Writeups</a>
+      <a href="{{ '/projects/' | relative_url }}"{% if page.url contains '/projects' %} class="active"{% endif %}>Projects</a>
+      <a href="{{ '/about/' | relative_url }}"{% if page.url contains '/about' %} class="active"{% endif %}>About</a>
+      <a href="{{ '/contact/' | relative_url }}"{% if page.url contains '/contact' %} class="active"{% endif %}>Contact</a>
+    </nav>
+  </div>
+</header>
