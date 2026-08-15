@@ -2,7 +2,6 @@
 title: "Enterprise 101 — Home SOC Lab"
 status: "In Progress"
 stack: [Active Directory, DNS, DHCP, Wazuh, SIEM]
-date: 2026-06-01
 github_url: ""
 writeup_url: ""
 summary: "A 7-VM lab modeling a small enterprise network — AD, DNS, DHCP, and a SIEM (Wazuh) — built to generate and investigate real telemetry."
@@ -17,7 +16,7 @@ SOC analyst would: starting from a SIEM alert with no answer key.
 
 ## Architecture
 
-The lab currently runs **7 virtual machines**:
+The lab currently runs **5 virtual machines**:
 
 <!-- TODO: fill in the exact VM roles/OS versions, e.g.
 - Domain Controller (Windows Server 2022) — AD DS, DNS, DHCP

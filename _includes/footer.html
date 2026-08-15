@@ -2,10 +2,14 @@
   <div class="wrap">
     <p>&copy; {{ 'now' | date: "%Y" }} {{ site.author.name }} · built with Jekyll, hosted on GitHub Pages</p>
     <div class="footer-links">
-      {% if site.author.github %}<a href="{{ site.author.github }}" target="_blank" rel="noopener">github</a>{% endif %}
-      {% if site.author.medium %}<a href="{{ site.author.medium }}" target="_blank" rel="noopener">medium</a>{% endif %}
-      {% if site.author.tryhackme %}<a href="{{ site.author.tryhackme }}" target="_blank" rel="noopener">tryhackme</a>{% endif %}
-      {% if site.author.linkedin %}<a href="{{ site.author.linkedin }}" target="_blank" rel="noopener">linkedin</a>{% endif %}
+      {% if site.author.github != "" %}<a href="{{ site.author.github }}" target="_blank" rel="noopener">github</a>{%
+      endif %}
+      {% if site.author.medium != "" %}<a href="{{ site.author.medium }}" target="_blank" rel="noopener">medium</a>{%
+      endif %}
+      {% if site.author.tryhackme != "" %}<a href="{{ site.author.tryhackme }}" target="_blank"
+        rel="noopener">tryhackme</a>{% endif %}
+      {% if site.author.linkedin != "" %}<a href="{{ site.author.linkedin }}" target="_blank"
+        rel="noopener">linkedin</a>{% endif %}
     </div>
   </div>
 </footer>

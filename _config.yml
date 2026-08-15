@@ -4,7 +4,6 @@ description: >-
   Security portfolio of Mohamed Saifudeen: TryHackMe writeups, a home SOC lab
   build, and ongoing work toward SOC analyst / blue team roles.
 
-# TODO: replace with your real GitHub Pages URL, e.g. https://yourusername.github.io
 url: "https://mohamedsaifudeen.github.io"
 baseurl: ""
 
