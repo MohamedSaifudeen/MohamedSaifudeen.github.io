@@ -26,12 +26,15 @@ The lab currently runs **5 virtual machines**:
 - pfSense/router VM for network segmentation
 -->
 
-| Role | Notes |
+| Role | Status |
 |---|---|
-| Domain Controller | Active Directory, DNS, DHCP |
-| SIEM | Wazuh manager + indexer/dashboard |
-| Endpoints | Domain-joined Windows hosts running the Wazuh agent |
-| *(add remaining VMs)* | *TODO* |
+| Domain Controller | Windows Server — Active Directory, DNS, DHCP configured, Wazuh agent connected |
+| Workstation | Windows 11 — Wazuh agent connected |
+| Workstation | Ubuntu Desktop — Wazuh agent connected |
+| Corporate server | Baseline snapshot taken |
+| Security server | Running Wazuh Indexer, Server, and Dashboard |
+| Attacker machine | Kali Purple — may add a standard Kali box later for a fuller offensive toolset |
+| Security Onion | Provisioned, not currently in active use |
 
 All endpoints forward logs to Wazuh, which is where detection and investigation work
 happens — the same workflow as a real SOC console rather than a pre-filtered CTF room.
@@ -39,7 +42,7 @@ happens — the same workflow as a real SOC console rather than a pre-filtered C
 ## What I'm using it for
 
 - Standing up AD/DNS/DHCP correctly enough that it behaves like a real small-business network
-- Getting Wazuh actually ingesting and alerting on endpoint + Windows Event Log telemetry
+- Wazuh is ingesting and alerting on endpoint + Windows Event Log telemetry — next is writing custom detection rules instead of relying on    defaults
 - Practicing detection engineering: writing and tuning rules, not just consuming pre-built ones
 - Simulating common attack techniques against my own environment and investigating the
   resulting alerts as if they came in cold

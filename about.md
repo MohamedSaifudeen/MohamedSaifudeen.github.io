@@ -41,10 +41,10 @@ a project, a CTF, a person) — recruiters like a concrete origin story more tha
 
 ## Home lab
 
-I'm building **Enterprise 101**, a 7-VM lab that mirrors a small enterprise network — Active
-Directory, DNS, DHCP, and a SIEM (Wazuh) — so I can generate and investigate real telemetry
-instead of only working guided rooms. Details are on the [projects page]({{ '/projects/enterprise-101/' | relative_url }}).
-
+I'm building **Enterprise 101** — a 7-VM network with Active Directory, DNS, and DHCP
+configured, and a Wazuh SIEM fully set up with agents deployed across the domain controller
+and both workstations — so I can generate and investigate real telemetry instead of only
+working guided rooms.
 ## What I'm looking for
 
 Entry-level **SOC Analyst** or **Blue Team** roles where I can start on triage and detection
